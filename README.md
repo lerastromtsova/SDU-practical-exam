@@ -133,6 +133,21 @@ Show the list of commands you need to do the following (in the given order).
 * make master go back to the commit before the bad commit
 * does git track bfile.txt? Reason your answer.
 
+### Answers
+After modifying ```afile.txt```, it was added to the staging area. Then, the file was modified the second time. This is why after executing ```git status``` we see this file twice.
+
+* remove the work in progress using git.
+```git checkout --  afile.txt```
+
+* remove the staged change
+```git reset HEAD afile.txt```
+
+* make master go back to the commit before the bad commit
+```git reset d45af1b```
+
+* does git track bfile.txt? Reason your answer.
+I think not, because I have tried modifying ```bfile.txt``` and ```git status``` did not track this change.
+
 ## 5
 
 ### Task
