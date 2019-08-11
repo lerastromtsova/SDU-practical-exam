@@ -153,6 +153,7 @@ What I see in the repository: after modifying ```afile.txt```, it was added to t
 No, because it is in .gitignore file.
 
 Git log after the task:
+
 ```* d45af1b (HEAD -> master) first commit```
 
 ## 5
