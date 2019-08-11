@@ -16,6 +16,15 @@ All work belongs to a task called "#321"
 1. _Squash_ the five relevant commits into one, with the commit message of "close #321"
 1. How does `git log` look now?
 
+### Answer
+
+Git commands:
+`git rebase -i 040d623`
+
+Git log:
+`* d07c283 (HEAD -> master) close #321`
+`* 040d623 initial file`
+
 ## 2
 
 You develop a new feature on the branch `new-feature`. You have already
