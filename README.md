@@ -25,6 +25,7 @@ Git commands:
 Git log:
 
 `* d07c283 (HEAD -> master) close #321`
+
 `* 040d623 initial file`
 
 ## 2
@@ -40,6 +41,34 @@ After the bug fix, you continue to work on the new feature. After you committed 
 1. Move the faulty commit from the `master` branch to the `new-feature` branch.
 1. Copy the bugfix to your feature branch as well
 1. The commit containing the second part of the feature makes master fail in the CI and you need to take that change out. How would you do that? Answer should provide both the command and the reasoning behind it.
+
+### Answer
+
+Git commands:
+
+```git checkout new-feature
+git cherry-pick e5fbc1e 1b1e21e
+```
+
+Then I fix a conflict.
+
+```git add myapp.txt 
+git commit -m "Implement second part of feature"
+git checkout master
+git reset --hard e5fbc1e
+```
+
+Git log:
+
+```
+* fb5db76 (new-feature) Implement second part of feature
+* bbacc6f Fix bug
+* 0beb584 Implement first part of feature
+| * e5fbc1e (HEAD -> master) Fix bug
+|/  
+* 412195f Initial commit
+```
+
 
 ## 3
 
