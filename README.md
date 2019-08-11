@@ -19,9 +19,11 @@ All work belongs to a task called "#321"
 ### Answer
 
 Git commands:
+
 `git rebase -i 040d623`
 
 Git log:
+
 `* d07c283 (HEAD -> master) close #321`
 `* 040d623 initial file`
 
