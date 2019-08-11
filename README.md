@@ -24,9 +24,10 @@ Git commands:
 
 Git log:
 
-`* d07c283 (HEAD -> master) close #321`
-
-`* 040d623 initial file`
+```bash
+* d07c283 (HEAD -> master) close #321
+* 040d623 initial file
+```
 
 ## 2
 
@@ -60,7 +61,7 @@ git reset --hard e5fbc1e
 
 Git log:
 
-```
+```bash
 * fb5db76 (new-feature) Implement second part of feature
 * bbacc6f Fix bug
 * 0beb584 Implement first part of feature
@@ -68,6 +69,8 @@ Git log:
 |/  
 * 412195f Initial commit
 ```
+
+If the second part of the feature fails in CI, I would reset the commit. Mode of resetting would depend on the result I would like to get: if I have some useful work and I don't want to lose it all, I would do ```git reset --soft```. If I want to discard my changes from all areas, including working directory, I would do ```git reset --hard```.
 
 
 ## 3
@@ -95,6 +98,25 @@ Instead of just merging the commit, you like a straight line of commits like the
 
 * Show the commands in order to achieve this position of commits.
 * Why does the commit with message "Change greeting to uppercase" change sha, when the others do not?
+
+### Answer
+
+Git commands:
+
+```
+git checkout feature
+git rebase master
+```
+
+Git log:
+```bash
+* bc17d0d (HEAD -> feature) Change greeting to uppercase
+* 991ffc0 (master) Add readme
+* ae39cf3 Add content to greeting.txt
+* 6805f1d Add file greeting.txt
+```
+
+The commit "Change greeting to uppercase" has changed its SHA because it is no longer the same commit. It's the copy of the old one, with different timestamp. 
 
 ## 4
 
